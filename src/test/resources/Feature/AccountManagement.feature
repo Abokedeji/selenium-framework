@@ -26,4 +26,15 @@ Feature: Account Management
       | Email                 | Password       |
       | seunshittu4@gmail.com | Playstation@22 |
 
+  @UnregisteredCustomerLogin
+  Scenario Outline: Unregistered customer should see an error message on the page while attempting to login into account
+    Given I am on login page
+    When I enter "<Email>" "<Password>"
+    And I click on sign in
+    Then An error message should be displayed
+
+    Examples:
+      | Email                | Password   |
+      | seunjegede@gmail.com | Omolomo@33 |
+
 

@@ -64,4 +64,8 @@ public class AccountManagementSteps {
         loginPagePO.clickSignInButton();
 
     }
+
+    @Then("An error message should be displayed")
+    public void anErrorMessageShouldBeDisplayed() {
+    }
 }
