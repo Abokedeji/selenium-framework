@@ -12,7 +12,7 @@ Feature: Account Management
 
     Examples:
       | FirstName | Lastname | Email                 | Password       | ConfirmPassword |
-      | Seun      | Shittu   | seunshittu4@gmail.com | Playstation@22 | Playstation@22  |
+      | Seun      | Shittu   | seunshittu2@gmail.com | Playstation@22 | Playstation@22  |
 
 
   @Login
@@ -24,6 +24,6 @@ Feature: Account Management
 
     Examples:
       | Email                 | Password       |
-      | seunshittu4@gmail.com | Playstation@22 |
+      | seunshittu2@gmail.com | Playstation@22 |
 
 
