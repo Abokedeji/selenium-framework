@@ -27,6 +27,7 @@ public class CreateAccountPagePO {
     public static WebElement CreateAccountButton;
 
 
+
     // Initialise Web Elements to use selenium webdriver - Stage 2
     public CreateAccountPagePO(WebDriver driver){
         PageFactory.initElements(driver, this);

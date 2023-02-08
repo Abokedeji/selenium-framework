@@ -11,7 +11,7 @@ Feature: Account Management
 
 
     Examples:
-      | FirstName | Lastname | Email                 | Password       | ConfirmPassword |
+      | FirstName | Lastname | Email                  | Password       | ConfirmPassword |
       | Seun      | Shittu   | seunshittu4@gmail.com | Playstation@22 | Playstation@22  |
 
 
@@ -23,7 +23,7 @@ Feature: Account Management
     Then My account page should be displayed
 
     Examples:
-      | Email                 | Password       |
+      | Email                  | Password       |
       | seunshittu4@gmail.com | Playstation@22 |
 
   @UnregisteredCustomerLogin
@@ -36,5 +36,17 @@ Feature: Account Management
     Examples:
       | Email                | Password   |
       | seunjegede@gmail.com | Omolomo@33 |
+
+
+  @DuplicateAccount
+  Scenario Outline: Duplicate Account creation is not allowed
+    Given I am on create an account page
+    When I enter "<FirstName>" "<Lastname>" "<Email>" "<Password>" "<ConfirmPassword>"
+    And I click on create an account
+    Then An error message should be displayed
+
+    Examples:
+      | FirstName | Lastname | Email                 | Password       | ConfirmPassword |
+      | Seun      | Shittu   | seunshittu4@gmail.com | Playstation@22 | Playstation@22  |
 
 

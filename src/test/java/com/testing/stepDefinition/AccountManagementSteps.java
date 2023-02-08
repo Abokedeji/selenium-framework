@@ -1,14 +1,13 @@
 package com.testing.stepDefinition;
 
 import com.testing.cucumber.Hooks;
-import com.testing.pageObject.CreateAccountPagePO;
-import com.testing.pageObject.HomePagePO;
-import com.testing.pageObject.LoginPagePO;
-import com.testing.pageObject.MyAccountPagePO;
+import com.testing.pageObject.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class AccountManagementSteps {
@@ -40,6 +39,9 @@ public class AccountManagementSteps {
 
     @Then("My account page should be displayed")
     public void myAccountPageShouldBeDisplayed() {
+        String expectedResult = "My Account";
+        String actualResult = driver.getTitle();
+        Assert.assertEquals(expectedResult, actualResult);
 
     }
 
@@ -56,6 +58,7 @@ public class AccountManagementSteps {
         loginPagePO.enterEmail(Email);
         loginPagePO.enterPassword(Password);
 
+
     }
 
     @And("I click on sign in")
@@ -67,5 +70,22 @@ public class AccountManagementSteps {
 
     @Then("An error message should be displayed")
     public void anErrorMessageShouldBeDisplayed() {
+        String expectedError = "There is already an account with this email address. If you are sure that it is your email address, click here to get your password and access your account.";
+        String elementValue = "#maincontent > div.page.messages > div:nth-child(2) > div > div > div";
+        String actualError = driver.findElement(By.cssSelector(elementValue)).getText();
+        Assert.assertEquals(expectedError, actualError);
+
+
+    }
+
+    @Then("Customer does not exist error message should be displayed")
+    public void customerDoesNotExistErrorMessageShouldBeDisplayed() {
+        String expectedErrorMessage = "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.";
+        String elementValue = "#maincontent > div.page.messages > div:nth-child(2) > div > div > div";
+        String actualErrorMessage = driver.findElement(By.cssSelector(elementValue)).getText();
+        Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
+
+
+
     }
 }

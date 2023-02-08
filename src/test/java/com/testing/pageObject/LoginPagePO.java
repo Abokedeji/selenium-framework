@@ -38,8 +38,13 @@ public class LoginPagePO {
 
     }
 
+    public void clearPassword(){
+        PasswordField.clear();
+    }
+
     public void clickSignInButton(){
         SignInButton.click();
+
 
 
     }

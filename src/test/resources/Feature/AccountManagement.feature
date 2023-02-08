@@ -11,7 +11,7 @@ Feature: Account Management
 
 
     Examples:
-      | FirstName | Lastname | Email                 | Password       | ConfirmPassword |
+      | FirstName | Lastname | Email                  | Password       | ConfirmPassword |
       | Seun      | Shittu   | seunshittu4@gmail.com | Playstation@22 | Playstation@22  |
 
 
@@ -23,7 +23,7 @@ Feature: Account Management
     Then My account page should be displayed
 
     Examples:
-      | Email                 | Password       |
+      | Email                  | Password       |
       | seunshittu4@gmail.com | Playstation@22 |
 
   @UnregisteredCustomerLogin
@@ -31,7 +31,7 @@ Feature: Account Management
     Given I am on login page
     When I enter "<Email>" "<Password>"
     And I click on sign in
-    Then An error message should be displayed
+    Then Customer does not exist error message should be displayed
 
     Examples:
       | Email                | Password   |
