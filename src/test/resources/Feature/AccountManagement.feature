@@ -11,8 +11,8 @@ Feature: Account Management
 
 
     Examples:
-      | FirstName | Lastname | Email                  | Password       | ConfirmPassword |
-      | Seun      | Shittu   | seunshittu4@gmail.com | Playstation@22 | Playstation@22  |
+      | FirstName | Lastname | Email                | Password       | ConfirmPassword |
+      | Seun      | Shittu   | seunshittu@gmail.com | Playstation@22 | Playstation@22  |
 
 
   @Login
@@ -23,8 +23,8 @@ Feature: Account Management
     Then My account page should be displayed
 
     Examples:
-      | Email                  | Password       |
-      | seunshittu4@gmail.com | Playstation@22 |
+      | Email                | Password       |
+      | seunshittu@gmail.com | Playstation@22 |
 
   @UnregisteredCustomerLogin
   Scenario Outline: Unregistered customer should see an error message on the page while attempting to login into account
@@ -46,7 +46,7 @@ Feature: Account Management
     Then An error message should be displayed
 
     Examples:
-      | FirstName | Lastname | Email                 | Password       | ConfirmPassword |
-      | Seun      | Shittu   | seunshittu4@gmail.com | Playstation@22 | Playstation@22  |
+      | FirstName | Lastname | Email                | Password       | ConfirmPassword |
+      | Seun      | Shittu   | seunshittu@gmail.com | Playstation@22 | Playstation@22  |
 
 
