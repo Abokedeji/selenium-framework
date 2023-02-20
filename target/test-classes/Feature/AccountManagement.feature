@@ -50,3 +50,16 @@ Feature: Account Management
       | Seun      | Shittu   | seunshittu@gmail.com | Playstation@22 | Playstation@22  |
 
 
+  @UpdatePassword
+  Scenario Outline: Customer should able to update password
+    Given I am on My Account page
+    When I click on Change Password
+    And I enter "<CurrentPassword>" "<NewPassword>" "<ConfirmNewPassword>"
+    And I click on Save
+    Then Password should be updated
+
+    Examples:
+      | CurrentPassword | NewPassword    | ConfirmNewPassword |
+      | Playstation@22  | Playstation@23 | Playstation@23     |
+
+

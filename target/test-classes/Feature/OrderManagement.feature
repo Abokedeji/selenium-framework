@@ -10,5 +10,5 @@ Feature: Order Management
     Then My Orders page should be displayed
 
     Examples:
-      | Email                  | Password       |
+      | Email                | Password       |
       | seunshittu@gmail.com | Playstation@22 |

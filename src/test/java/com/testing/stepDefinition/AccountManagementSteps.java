@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 public class AccountManagementSteps {
 
     WebDriver driver = Hooks.driver;
+
     @Given("I am on create an account page")
     public void iAmOnCreateAnAccountPage() {
         HomePagePO homePagePO = new HomePagePO(driver);
@@ -86,6 +87,40 @@ public class AccountManagementSteps {
         Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
 
 
+    }
 
+    @Given("I am on My Account page")
+    public void iAmOnMyAccountPage() {
+        LoginPagePO loginPagePO = new LoginPagePO(driver);
+        loginPagePO.clickSignInButton();
+
+    }
+
+    @When("I click on Change Password")
+    public void iClickOnChangePassword() {
+        MyAccountPagePO myAccountPagePO = new MyAccountPagePO(driver);
+        myAccountPagePO.clickChangePasswordLink();
+
+    }
+
+    @And("I enter {string} {string} {string}")
+    public void iEnter(String CurrentPassword, String NewPassword, String ConfirmNewPassword) {
+        EditAccountInformationPagePO editAccountInformationPagePO = new EditAccountInformationPagePO(driver);
+        EditAccountInformationPagePO.enterCurrentPassword(CurrentPassword);
+        EditAccountInformationPagePO.enterNewPassword(NewPassword);
+        EditAccountInformationPagePO.enterConfirmNewPassword(ConfirmNewPassword);
+
+
+
+    }
+
+    @And("I click on Save")
+    public void iClickOnSave() {
+        EditAccountInformationPagePO editAccountInformationPagePO = new EditAccountInformationPagePO(driver);
+        editAccountInformationPagePO.clickSaveButton();
+    }
+
+    @Then("Password should be updated")
+    public void passwordShouldBeUpdated() {
     }
 }

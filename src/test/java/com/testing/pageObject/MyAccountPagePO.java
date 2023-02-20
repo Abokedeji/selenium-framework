@@ -11,6 +11,9 @@ public class MyAccountPagePO {
     @FindBy(linkText = "My Orders")
     public static WebElement MyOrdersLink;
 
+    @FindBy(linkText = "Change Password")
+    public static WebElement ChangePasswordLink;
+
     // Initialise Web Element to use Selenium Web driver
 
     public MyAccountPagePO(WebDriver driver){
@@ -23,6 +26,10 @@ public class MyAccountPagePO {
     public void clickMyOrdersLink(){
         MyOrdersLink.click();
 
+    }
+
+    public void clickChangePasswordLink(){
+        ChangePasswordLink.click();
     }
 
 

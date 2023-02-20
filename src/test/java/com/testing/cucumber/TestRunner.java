@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = {"com.testing.stepDefinition",
                 "com.testing.cucumber",},
         plugin = {"pretty","html:target/site/cucumber.html"},
-        tags = "@ViewMyOrderHistory"
+        tags = "@UnregisteredCustomerLogin"
 )
         public class TestRunner {
 }
