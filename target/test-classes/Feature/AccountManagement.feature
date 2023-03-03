@@ -62,4 +62,15 @@ Feature: Account Management
       | CurrentPassword | NewPassword    | ConfirmNewPassword |
       | Playstation@22  | Playstation@23 | Playstation@23     |
 
+  @DeletedCustomer
+  Scenario Outline: Deleted customer cannot login
+    Given I am on login page
+    When I enter "<Email>" "<Password>"
+    And I click on sign in
+    Then Account deleted error message should be displayed
+
+    Examples:
+      | Email                | Password       |
+      | seunshittu@gmail.com | Playstation@22 |
+
 

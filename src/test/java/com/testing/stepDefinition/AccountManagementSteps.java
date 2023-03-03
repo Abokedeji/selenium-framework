@@ -123,4 +123,15 @@ public class AccountManagementSteps {
     @Then("Password should be updated")
     public void passwordShouldBeUpdated() {
     }
+
+    @Then("Account deleted error message should be displayed")
+    public void accountDeletedErrorMessageShouldBeDisplayed() {
+        String expectedErrorShown = "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.";
+        String elementValue = "#maincontent > div.page.messages > div:nth-child(2) > div > div > div";
+        String actualErrorShown = driver.findElement(By.cssSelector(elementValue)).getText();
+        Assert.assertEquals(expectedErrorShown, actualErrorShown);
+
+
+
+    }
 }
