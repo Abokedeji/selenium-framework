@@ -131,7 +131,5 @@ public class AccountManagementSteps {
         String actualErrorShown = driver.findElement(By.cssSelector(elementValue)).getText();
         Assert.assertEquals(expectedErrorShown, actualErrorShown);
 
-
-
     }
 }

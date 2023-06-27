@@ -9,7 +9,6 @@ Feature: Account Management
     Then My account page should be displayed
 
 
-
     Examples:
       | FirstName | Lastname | Email                | Password       | ConfirmPassword |
       | Seun      | Shittu   | seunshittu@gmail.com | Playstation@22 | Playstation@22  |
@@ -72,5 +71,11 @@ Feature: Account Management
     Examples:
       | Email                | Password       |
       | seunshittu@gmail.com | Playstation@22 |
+
+
+
+
+
+
 
 

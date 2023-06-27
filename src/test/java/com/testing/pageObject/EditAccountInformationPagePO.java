@@ -25,16 +25,19 @@ public class EditAccountInformationPagePO {
 
     public EditAccountInformationPagePO(WebDriver driver) {
         PageFactory.initElements(driver, this);
+
     }
 
     // Page Specific Method
 
     public static void enterCurrentPassword(String CurrentPassword){
         CurrentPasswordField.sendKeys(CurrentPassword);
+
     }
 
     public static void enterNewPassword(String NewPassword){
         NewPasswordField.sendKeys(NewPassword);
+
     }
 
     public static void enterConfirmNewPassword(String ConfirmNewPassword){

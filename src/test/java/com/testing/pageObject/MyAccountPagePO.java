@@ -30,6 +30,7 @@ public class MyAccountPagePO {
 
     public void clickChangePasswordLink(){
         ChangePasswordLink.click();
+
     }
 
 
