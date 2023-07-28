@@ -72,6 +72,17 @@ Feature: Account Management
       | Email                | Password       |
       | seunshittu@gmail.com | Playstation@22 |
 
+  @IncorrectPassword
+  Scenario Outline: Account locked after 5 incorrect password attempt
+    Given I am on login page
+    When I enter valid "<Email>" and invalid "<Password>"
+    And I click on sign in
+    Then Account has been suspended error message should be displayed
+
+    Examples:
+      | Email                | Password    |
+      | seunshittu@gmail.com | Otondo@1692 |
+
 
 
 

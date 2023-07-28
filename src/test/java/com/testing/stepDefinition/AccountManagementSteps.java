@@ -132,4 +132,19 @@ public class AccountManagementSteps {
         Assert.assertEquals(expectedErrorShown, actualErrorShown);
 
     }
+
+    @When("I enter valid {string} and invalid {string}")
+    public void iEnterValidAndInvalid(String Email, String Password) {
+        LoginPagePO loginPagePO = new LoginPagePO(driver);
+        loginPagePO.enterEmail(Email);
+        for (int i = 1; i <=5; i++){
+            loginPagePO.enterPassword(Password);
+            loginPagePO.clearPassword();
+            loginPagePO.clickSignInButton();
+        }
+    }
+
+    @Then("Account has been suspended error message should be displayed")
+    public void accountHasBeenSuspendedErrorMessageShouldBeDisplayed() {
+    }
 }
